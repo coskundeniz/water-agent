@@ -4,6 +4,7 @@ if sys.version_info.major < 3:
     print("Use python3 to run the script!")
     sys.exit(1)
 
+import os
 from urllib.request import urlopen
 
 try:
@@ -14,9 +15,9 @@ except ImportError:
     sys.exit(1)
 
 
-TWILIO_SID = "Twilio sid"
-TWILIO_AUTH = "Twilio auth"
-TWILIO_NUMBER="Twilio number to receive messages from"
+TWILIO_SID = os.environ["TWILIO_SID"]
+TWILIO_AUTH = os.environ["TWILIO_AUTH"]
+TWILIO_NUMBER = os.environ["TWILIO_NUMBER"]
 PAGE_URL = "https://www.iski.istanbul/web/tr-TR/ariza-kesinti"
 
 
@@ -88,6 +89,7 @@ def construct_message(region, info):
 
     return message
 
+
 def send_sms(message, to):
     """Send sms message to given number
 
@@ -113,7 +115,7 @@ def is_requested_region_in_result(query_results, region):
     :returns: Whether region in the results or not
     """
 
-    return region in query_results.keys()
+    return region in query_results
 
 
 if __name__ == '__main__':
@@ -136,5 +138,4 @@ if __name__ == '__main__':
             print("An error occurred during message sending operation!")
     else:
         print("No water interruption for the given region!")
-
 
