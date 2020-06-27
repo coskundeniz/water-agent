@@ -1,17 +1,12 @@
-import sys
-
-if sys.version_info.major < 3:
-    print("Use python3 to run the script!")
-    sys.exit(1)
-
 import os
+import sys
 from urllib.request import urlopen
 
 try:
     from bs4 import BeautifulSoup
     from twilio.rest import Client
 except ImportError:
-    print("Please run 'pip install -r requirements.txt'")
+    print("Please run 'pipenv install' or 'pip install -r requirements.txt'")
     sys.exit(1)
 
 

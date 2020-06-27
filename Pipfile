@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+beautifulsoup4 = "*"
+bs4 = "*"
+certifi = "*"
+chardet = "*"
+idna = "*"
+lxml = "*"
+PyJWT = "*"
+PySocks = "*"
+python-crontab = "*"
+python-dateutil = "*"
+pytz = "*"
+requests = "*"
+six = "*"
+soupsieve = "*"
+twilio = "*"
+urllib3 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

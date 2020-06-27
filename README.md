@@ -10,6 +10,9 @@ This script queries water interruption info for İstanbul and sends sms if there
 Requirements
 ------------
 
+Run one of the followings
+
+* pipenv install
 * pip install -r requirements.txt
 
 Usage
